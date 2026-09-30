@@ -27,9 +27,10 @@ pipeline{
         stage("build and push image") {
             steps{
                 script{
+                    dockerLogin()
                     echo 'building and pushing the image'
                     buildImage(env.IMAGE_NAME)
-                    dockerLogin()
+                    // dockerLogin()
                     dockerPush(env.IMAGE_NAME)
                 }
 
