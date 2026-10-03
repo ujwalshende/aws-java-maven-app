@@ -56,9 +56,9 @@ pipeline{
                     def shellCmd = "bash ./server-cmds.sh ${IMAGE_NAME}"  
                     def ec2_instance = "ec2-user@3.66.155.131"
                     sshagent(credentials: ['ec2-server-key'], executable: '') {
-                        sh "scp server-cmds.sh ${ec2-instance}:/home/ec2-user"
-                        sh "scp docker-compose.yaml ${ec2-instance}:/home/ec2-user"
-                        sh "ssh -o StrictHostKeyChecking=no ${ec2-instance} ${shellCmd}"
+                        sh "scp server-cmds.sh ${ec2_instance}:/home/ec2-user"
+                        sh "scp docker-compose.yaml ${ec2_instance}:/home/ec2-user"
+                        sh "ssh -o StrictHostKeyChecking=no ${ec2_instance} ${shellCmd}"
                     }
 
                 }
