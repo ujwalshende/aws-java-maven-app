@@ -44,7 +44,7 @@ pipeline{
                     
                     sshagent(credentials: ['ec2-server-key'], executable: '') {
                         sh "scp docker-compose.yaml ec2-user@3.66.155.131:/home/ec2-user"
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@3.66.155.131 ${dockerCmd}"
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@3.66.155.131 ${dockerComposeCmd}"
                     }
 
                 }
