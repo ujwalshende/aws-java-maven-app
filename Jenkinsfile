@@ -76,7 +76,7 @@ pipeline{
                         sh "git remote set-url origin https://${USER}:${GITHUB_TOKEN}@github.com/ujwalshende/aws-java-maven-app.git"
                         sh "git add ."
                         sh 'git commit -m "ci: version bump"'
-                        sh "git push origin HEAD:bump-version"
+                        sh "git push origin HEAD:master"
                     }
                 }
             }
