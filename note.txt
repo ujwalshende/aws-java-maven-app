@@ -1,0 +1,1 @@
+Uses the java-maven-app-aws repository in Github
