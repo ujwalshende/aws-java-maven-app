@@ -90,6 +90,6 @@ resource "aws_instance" "myapp-server" {
   user_data_replace_on_change = true
 }
 
-output "ecw_public_ip" {
+output "ec2_public_ip" {
   value = aws_instance.myapp-server.public_ip
 }
