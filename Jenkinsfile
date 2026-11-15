@@ -11,9 +11,6 @@ pipeline{
     tools{
         maven 'maven-3.9.16'
     }
-    environment{
-        IMAGE_NAME = 'uds10/demo-app:jma-1.0'
-    }
     stages {
         stage("increment version") {
             steps{
