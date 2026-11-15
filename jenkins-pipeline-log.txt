@@ -12,7 +12,7 @@ using GIT_ASKPASS to set credentials
 Seen branch in repository origin/feat/terraform-provisioning
 Seen branch in repository origin/master
 Seen 2 remote branches
-Obtained Jenkinsfile from e48d5e05495d260aaf1aa316fabb09f11195fba3
+Obtained Jenkinsfile from ee26476f0ed9d93351fd70b9337d6af3c48c9179
 [Pipeline] Start of Pipeline
 [Pipeline] library
 Loading library jenkins-shared-library@master
@@ -56,11 +56,11 @@ Fetching upstream changes from https://github.com/ujwalshende/aws-java-maven-app
  > git --version # 'git version 2.47.3'
 using GIT_ASKPASS to set credentials 
  > git fetch --no-tags --force --progress -- https://github.com/ujwalshende/aws-java-maven-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-Checking out Revision e48d5e05495d260aaf1aa316fabb09f11195fba3 (feat/terraform-provisioning)
+Checking out Revision ee26476f0ed9d93351fd70b9337d6af3c48c9179 (feat/terraform-provisioning)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f e48d5e05495d260aaf1aa316fabb09f11195fba3 # timeout=10
-Commit message: "add terraform folder to gitignore"
- > git rev-list --no-walk d892dc6a6ac2eb7292c0020f41210c6ca2a97e30 # timeout=10
+ > git checkout -f ee26476f0ed9d93351fd70b9337d6af3c48c9179 # timeout=10
+Commit message: "add terraform.lock.hcl to git"
+ > git rev-list --no-walk e48d5e05495d260aaf1aa316fabb09f11195fba3 # timeout=10
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] withEnv
@@ -88,118 +88,30 @@ incrementing app version...
 [Pipeline] sh
 + mvn build-helper:parse-version versions:set -DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion} versions:commit
 [INFO] Scanning for projects...
-Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
-Progress (1): 249 BProgress (2): 249 B | 3.1 kBProgress (3): 249 B | 3.1 kB | 3.8 kBProgress (3): 249 B | 8.7 kB | 3.8 kBProgress (3): 249 B | 8.7 kB | 9.7 kBProgress (3): 249 B | 8.7 kB | 10 kB Progress (3): 249 B | 14 kB | 10 kB Progress (3): 249 B | 18 kB | 10 kBProgress (3): 249 B | 20 kB | 10 kB                                   Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml (249 B at 207 B/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (10 kB at 8.6 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 17 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/maven-metadata.xml
-Progress (1): 1.1 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/maven-metadata.xml (1.1 kB at 29 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.8.0/build-helper-maven-plugin-3.8.0.pom
-Progress (1): 986 BProgress (1): 1.1 kBProgress (1): 3.1 kBProgress (1): 6.9 kBProgress (1): 7.9 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.8.0/build-helper-maven-plugin-3.8.0.pom (10 kB at 253 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.8.0/build-helper-maven-plugin-3.8.0.jar
-Progress (1): 0.5/76 kBProgress (1): 1.9/76 kBProgress (1): 3.2/76 kBProgress (1): 4.5/76 kBProgress (1): 5.9/76 kBProgress (1): 7.3/76 kBProgress (1): 8.7/76 kBProgress (1): 10/76 kB Progress (1): 11/76 kBProgress (1): 13/76 kBProgress (1): 14/76 kBProgress (1): 16/76 kBProgress (1): 17/76 kBProgress (1): 18/76 kBProgress (1): 20/76 kBProgress (1): 21/76 kBProgress (1): 22/76 kBProgress (1): 24/76 kBProgress (1): 25/76 kBProgress (1): 26/76 kBProgress (1): 28/76 kBProgress (1): 29/76 kBProgress (1): 30/76 kBProgress (1): 32/76 kBProgress (1): 33/76 kBProgress (1): 35/76 kBProgress (1): 36/76 kBProgress (1): 37/76 kBProgress (1): 39/76 kBProgress (1): 40/76 kBProgress (1): 41/76 kBProgress (1): 46/76 kBProgress (1): 50/76 kBProgress (1): 54/76 kBProgress (1): 58/76 kBProgress (1): 63/76 kBProgress (1): 67/76 kBProgress (1): 71/76 kBProgress (1): 75/76 kBProgress (1): 76 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.8.0/build-helper-maven-plugin-3.8.0.jar (76 kB at 822 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/maven-metadata.xml
-Progress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/maven-metadata.xml (1.7 kB at 49 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.25.2/versions-maven-plugin-2.25.2.pom
-Progress (1): 1.9 kBProgress (1): 7.0 kBProgress (1): 7.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.25.2/versions-maven-plugin-2.25.2.pom (7.9 kB at 255 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions/2.25.2/versions-2.25.2.pom
-Progress (1): 1.2 kBProgress (1): 3.2 kBProgress (1): 4.7 kBProgress (1): 8.3 kBProgress (1): 13 kB Progress (1): 16 kBProgress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions/2.25.2/versions-2.25.2.pom (18 kB at 313 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.25.2/versions-maven-plugin-2.25.2.jar
-Progress (1): 3.4/332 kBProgress (1): 4.1/332 kBProgress (1): 8.3/332 kBProgress (1): 12/332 kB Progress (1): 17/332 kBProgress (1): 21/332 kBProgress (1): 25/332 kBProgress (1): 29/332 kBProgress (1): 33/332 kBProgress (1): 34/332 kBProgress (1): 38/332 kBProgress (1): 42/332 kBProgress (1): 46/332 kBProgress (1): 51/332 kBProgress (1): 55/332 kBProgress (1): 59/332 kBProgress (1): 63/332 kBProgress (1): 68/332 kBProgress (1): 72/332 kBProgress (1): 76/332 kBProgress (1): 78/332 kBProgress (1): 82/332 kBProgress (1): 86/332 kBProgress (1): 91/332 kBProgress (1): 107/332 kBProgress (1): 123/332 kBProgress (1): 127/332 kBProgress (1): 143/332 kBProgress (1): 160/332 kBProgress (1): 176/332 kBProgress (1): 193/332 kBProgress (1): 209/332 kBProgress (1): 225/332 kBProgress (1): 242/332 kBProgress (1): 258/332 kBProgress (1): 274/332 kBProgress (1): 291/332 kBProgress (1): 307/332 kBProgress (1): 324/332 kBProgress (1): 332 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions-maven-plugin/2.25.2/versions-maven-plugin-2.25.2.jar (332 kB at 2.4 MB/s)
 [INFO] 
 [INFO] ---------------------< com.example:java-maven-app >---------------------
-[INFO] Building java-maven-app 1.1.0-SNAPSHOT
+[INFO] Building java-maven-app 1.1.1
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] --- build-helper:3.8.0:parse-version (default-cli) @ java-maven-app ---
 [INFO] 
 [INFO] ---------------------< com.example:java-maven-app >---------------------
-[INFO] Building java-maven-app 1.1.0-SNAPSHOT
+[INFO] Building java-maven-app 1.1.1
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] --- versions:2.25.2:set (default-cli) @ java-maven-app ---
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-api/2.25.2/versions-api-2.25.2.pom
-Progress (1): 940 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-api/2.25.2/versions-api-2.25.2.pom (940 B at 34 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model/2.25.2/versions-model-2.25.2.pom
-Progress (1): 1.2 kBProgress (1): 2.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model/2.25.2/versions-model-2.25.2.pom (2.7 kB at 92 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model-report/2.25.2/versions-model-report-2.25.2.pom
-Progress (1): 1.4 kBProgress (1): 2.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model-report/2.25.2/versions-model-report-2.25.2.pom (2.6 kB at 82 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-common/2.25.2/versions-common-2.25.2.pom
-Progress (1): 2.5 kBProgress (1): 5.5 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-common/2.25.2/versions-common-2.25.2.pom (5.5 kB at 102 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/4.3.2/stax2-api-4.3.2.pom
-Progress (1): 967 BProgress (1): 2.6 kBProgress (1): 4.7 kBProgress (1): 5.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/4.3.2/stax2-api-4.3.2.pom (5.9 kB at 197 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.7/snakeyaml-2.7.pom
-Progress (1): 1.2 kBProgress (1): 3.2 kBProgress (1): 7.3 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 20 kBProgress (1): 22 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.7/snakeyaml-2.7.pom (22 kB at 465 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/2.2.0/doxia-sink-api-2.2.0.pom
-Progress (1): 843 BProgress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/2.2.0/doxia-sink-api-2.2.0.pom (1.7 kB at 57 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/2.2.0/doxia-2.2.0.pom
-Progress (1): 758 BProgress (1): 2.2 kBProgress (1): 4.5 kBProgress (1): 8.0 kBProgress (1): 10 kB Progress (1): 13 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/2.2.0/doxia-2.2.0.pom (13 kB at 343 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/50/maven-parent-50.pom
-Progress (1): 716 BProgress (1): 1.9 kBProgress (1): 5.6 kBProgress (1): 9.8 kBProgress (1): 14 kB Progress (1): 19 kBProgress (1): 23 kBProgress (1): 27 kBProgress (1): 28 kBProgress (1): 32 kBProgress (1): 36 kBProgress (1): 38 kBProgress (1): 41 kBProgress (1): 44 kBProgress (1): 45 kBProgress (1): 49 kBProgress (1): 52 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/50/maven-parent-50.pom (52 kB at 1.2 MB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/40/apache-40.pom
-Progress (1): 732 BProgress (1): 2.0 kBProgress (1): 4.0 kBProgress (1): 5.5 kBProgress (1): 8.4 kBProgress (1): 14 kB Progress (1): 19 kBProgress (1): 23 kBProgress (1): 25 kBProgress (1): 27 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/40/apache-40.pom (27 kB at 968 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/1.1.1/org.eclipse.sisu.plexus-1.1.1.pom
-Progress (1): 798 BProgress (1): 3.4 kBProgress (1): 7.2 kBProgress (1): 16 kB Progress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/1.1.1/org.eclipse.sisu.plexus-1.1.1.pom (18 kB at 489 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/1.1.1/sisu-inject-1.1.1.pom
-Progress (1): 773 BProgress (1): 2.7 kBProgress (1): 4.6 kBProgress (1): 7.0 kBProgress (1): 11 kB Progress (1): 14 kBProgress (1): 18 kBProgress (1): 21 kBProgress (1): 24 kBProgress (1): 27 kBProgress (1): 28 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/1.1.1/sisu-inject-1.1.1.pom (28 kB at 691 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/1.1.1/org.eclipse.sisu.inject-1.1.1.pom
-Progress (1): 804 BProgress (1): 3.8 kBProgress (1): 11 kB Progress (1): 18 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/1.1.1/org.eclipse.sisu.inject-1.1.1.pom (18 kB at 641 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.11.1/asm-9.11.1.pom
-Progress (1): 1.3 kBProgress (1): 2.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.11.1/asm-9.11.1.pom (2.4 kB at 22 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.12.1/plexus-classworlds-2.12.1.pom
-Progress (1): 859 BProgress (1): 2.5 kBProgress (1): 5.2 kBProgress (1): 7.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.12.1/plexus-classworlds-2.12.1.pom (7.4 kB at 231 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/2.2.0/doxia-core-2.2.0.pom
-Progress (1): 815 BProgress (1): 2.8 kBProgress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/2.2.0/doxia-core-2.2.0.pom (3.2 kB at 116 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.15.0/plexus-archiver-4.15.0.pom
-Progress (1): 1.0 kBProgress (1): 3.7 kBProgress (1): 6.0 kBProgress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.15.0/plexus-archiver-4.15.0.pom (6.6 kB at 219 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.8.0/plexus-io-3.8.0.pom
-Progress (1): 1.0 kBProgress (1): 3.5 kBProgress (1): 4.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.8.0/plexus-io-3.8.0.pom (4.0 kB at 138 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.23.0/commons-codec-1.23.0.pom
-Progress (1): 738 BProgress (1): 1.9 kBProgress (1): 4.1 kBProgress (1): 5.8 kBProgress (1): 8.4 kBProgress (1): 12 kB Progress (1): 15 kBProgress (1): 18 kBProgress (1): 19 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.23.0/commons-codec-1.23.0.pom (19 kB at 544 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-16/zstd-jni-1.5.7-16.pom
-Progress (1): 1.1 kBProgress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-16/zstd-jni-1.5.7-16.pom (2.2 kB at 62 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-api/2.25.2/versions-api-2.25.2.jar
-Progress (1): 6.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-api/2.25.2/versions-api-2.25.2.jar (6.6 kB at 166 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model/2.25.2/versions-model-2.25.2.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model-report/2.25.2/versions-model-report-2.25.2.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-common/2.25.2/versions-common-2.25.2.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.7/snakeyaml-2.7.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/4.3.2/stax2-api-4.3.2.jar
-Progress (1): 7.7/13 kBProgress (1): 7.7/13 kBProgress (1): 13 kB                       Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model/2.25.2/versions-model-2.25.2.jar (13 kB at 445 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.15.0/plexus-archiver-4.15.0.jar
-Progress (1): 0.9/215 kBProgress (1): 2.3/215 kBProgress (1): 3.6/215 kBProgress (1): 5.0/215 kBProgress (1): 6.4/215 kBProgress (1): 7.7/215 kBProgress (1): 9.1/215 kBProgress (1): 10/215 kB Progress (1): 12/215 kBProgress (1): 13/215 kBProgress (2): 13/215 kB | 0.9/332 kBProgress (2): 15/215 kB | 0.9/332 kBProgress (2): 16/215 kB | 0.9/332 kBProgress (2): 17/215 kB | 0.9/332 kBProgress (2): 19/215 kB | 0.9/332 kBProgress (2): 20/215 kB | 0.9/332 kBProgress (2): 21/215 kB | 0.9/332 kBProgress (2): 23/215 kB | 0.9/332 kBProgress (2): 24/215 kB | 0.9/332 kBProgress (2): 25/215 kB | 0.9/332 kBProgress (2): 25/215 kB | 2.3/332 kBProgress (2): 25/215 kB | 3.2/332 kBProgress (2): 25/215 kB | 4.5/332 kBProgress (2): 25/215 kB | 5.9/332 kBProgress (2): 25/215 kB | 7.3/332 kBProgress (2): 25/215 kB | 8.6/332 kBProgress (2): 25/215 kB | 10/332 kB Progress (2): 25/215 kB | 11/332 kBProgress (2): 25/215 kB | 13/332 kBProgress (2): 25/215 kB | 14/332 kBProgress (2): 25/215 kB | 15/332 kBProgress (3): 25/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 25/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 27/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 28/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 30/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 31/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 32/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 34/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 35/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 36/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 38/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 15/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 17/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 18/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 20/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 21/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 22/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 24/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 25/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 26/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 28/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 29/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 30/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 32/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 33/332 kB | 7.7/235 kBProgress (3): 39/215 kB | 33/332 kB | 24/235 kB Progress (3): 39/215 kB | 33/332 kB | 40/235 kBProgress (3): 39/215 kB | 35/332 kB | 40/235 kBProgress (3): 39/215 kB | 36/332 kB | 40/235 kBProgress (3): 39/215 kB | 37/332 kB | 40/235 kBProgress (3): 39/215 kB | 39/332 kB | 40/235 kBProgress (3): 39/215 kB | 40/332 kB | 40/235 kBProgress (3): 39/215 kB | 41/332 kB | 40/235 kBProgress (3): 39/215 kB | 43/332 kB | 40/235 kBProgress (3): 39/215 kB | 44/332 kB | 40/235 kBProgress (3): 39/215 kB | 46/332 kB | 40/235 kBProgress (3): 41/215 kB | 46/332 kB | 40/235 kBProgress (3): 42/215 kB | 46/332 kB | 40/235 kBProgress (3): 43/215 kB | 46/332 kB | 40/235 kBProgress (3): 45/215 kB | 46/332 kB | 40/235 kBProgress (3): 46/215 kB | 46/332 kB | 40/235 kBProgress (3): 47/215 kB | 46/332 kB | 40/235 kBProgress (3): 49/215 kB | 46/332 kB | 40/235 kBProgress (3): 50/215 kB | 46/332 kB | 40/235 kBProgress (3): 51/215 kB | 46/332 kB | 40/235 kBProgress (3): 51/215 kB | 47/332 kB | 40/235 kBProgress (3): 51/215 kB | 48/332 kB | 40/235 kBProgress (3): 51/215 kB | 50/332 kB | 40/235 kBProgress (3): 51/215 kB | 51/332 kB | 40/235 kBProgress (3): 51/215 kB | 52/332 kB | 40/235 kBProgress (3): 51/215 kB | 52/332 kB | 57/235 kBProgress (3): 51/215 kB | 57/332 kB | 57/235 kBProgress (3): 51/215 kB | 57/332 kB | 73/235 kBProgress (3): 51/215 kB | 61/332 kB | 73/235 kBProgress (3): 51/215 kB | 65/332 kB | 73/235 kBProgress (3): 51/215 kB | 69/332 kB | 73/235 kBProgress (3): 51/215 kB | 74/332 kB | 73/235 kBProgress (3): 51/215 kB | 78/332 kB | 73/235 kBProgress (3): 51/215 kB | 82/332 kB | 73/235 kBProgress (3): 51/215 kB | 86/332 kB | 73/235 kBProgress (3): 56/215 kB | 86/332 kB | 73/235 kBProgress (3): 60/215 kB | 86/332 kB | 73/235 kBProgress (3): 64/215 kB | 86/332 kB | 73/235 kBProgress (3): 68/215 kB | 86/332 kB | 73/235 kBProgress (3): 73/215 kB | 86/332 kB | 73/235 kBProgress (3): 73/215 kB | 90/332 kB | 73/235 kBProgress (3): 73/215 kB | 95/332 kB | 73/235 kBProgress (3): 73/215 kB | 99/332 kB | 73/235 kBProgress (3): 73/215 kB | 103/332 kB | 73/235 kBProgress (3): 73/215 kB | 107/332 kB | 73/235 kBProgress (3): 73/215 kB | 112/332 kB | 73/235 kBProgress (3): 73/215 kB | 112/332 kB | 90/235 kBProgress (3): 77/215 kB | 112/332 kB | 90/235 kBProgress (3): 77/215 kB | 116/332 kB | 90/235 kBProgress (3): 81/215 kB | 116/332 kB | 90/235 kBProgress (3): 81/215 kB | 120/332 kB | 90/235 kBProgress (3): 81/215 kB | 124/332 kB | 90/235 kBProgress (3): 81/215 kB | 126/332 kB | 90/235 kBProgress (3): 81/215 kB | 130/332 kB | 90/235 kBProgress (3): 81/215 kB | 134/332 kB | 90/235 kBProgress (3): 81/215 kB | 134/332 kB | 106/235 kBProgress (3): 85/215 kB | 134/332 kB | 106/235 kBProgress (3): 90/215 kB | 134/332 kB | 106/235 kBProgress (3): 90/215 kB | 134/332 kB | 106/235 kBProgress (3): 90/215 kB | 134/332 kB | 122/235 kBProgress (3): 94/215 kB | 134/332 kB | 122/235 kBProgress (3): 98/215 kB | 134/332 kB | 122/235 kBProgress (3): 102/215 kB | 134/332 kB | 122/235 kBProgress (3): 102/215 kB | 134/332 kB | 139/235 kBProgress (3): 102/215 kB | 139/332 kB | 139/235 kBProgress (3): 102/215 kB | 143/332 kB | 139/235 kBProgress (4): 102/215 kB | 143/332 kB | 139/235 kB | 0.9/196 kBProgress (4): 102/215 kB | 143/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 102/215 kB | 147/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 107/215 kB | 147/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 107/215 kB | 151/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 111/215 kB | 151/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 115/215 kB | 151/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 115/215 kB | 156/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 119/215 kB | 156/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 119/215 kB | 160/332 kB | 139/235 kB | 2.3/196 kBProgress (4): 119/215 kB | 160/332 kB | 155/235 kB | 2.3/196 kBProgress (4): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 0.9/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 2.3/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 3.2/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 4.6/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 5.9/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 7.3/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 8.7/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 10/47 kB Progress (5): 119/215 kB | 160/332 kB | 172/235 kB | 2.3/196 kB | 11/47 kBProgress (5): 119/215 kB | 160/332 kB | 172/235 kB | 3.6/196 kB | 11/47 kBProgress (5): 123/215 kB | 160/332 kB | 172/235 kB | 3.6/196 kB | 11/47 kBProgress (5): 123/215 kB | 160/332 kB | 172/235 kB | 5.0/196 kB | 11/47 kBProgress (5): 123/215 kB | 160/332 kB | 172/235 kB | 6.4/196 kB | 11/47 kBProgress (5): 123/215 kB | 160/332 kB | 172/235 kB | 7.7/196 kB | 11/47 kBProgress (5): 123/215 kB | 160/332 kB | 172/235 kB | 9.1/196 kB | 11/47 kBProgress (5): 128/215 kB | 160/332 kB | 172/235 kB | 9.1/196 kB | 11/47 kBProgress (5): 128/215 kB | 160/332 kB | 172/235 kB | 10/196 kB | 11/47 kB Progress (5): 128/215 kB | 160/332 kB | 172/235 kB | 12/196 kB | 11/47 kBProgress (5): 132/215 kB | 160/332 kB | 172/235 kB | 12/196 kB | 11/47 kBProgress (5): 132/215 kB | 160/332 kB | 172/235 kB | 13/196 kB | 11/47 kBProgress (5): 132/215 kB | 160/332 kB | 172/235 kB | 15/196 kB | 11/47 kBProgress (5): 136/215 kB | 160/332 kB | 172/235 kB | 15/196 kB | 11/47 kBProgress (5): 136/215 kB | 160/332 kB | 172/235 kB | 16/196 kB | 11/47 kBProgress (5): 136/215 kB | 160/332 kB | 172/235 kB | 17/196 kB | 11/47 kBProgress (5): 136/215 kB | 160/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 160/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 164/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 168/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 173/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 177/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 181/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 185/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 189/332 kB | 172/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 189/332 kB | 188/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 11/47 kBProgress (5): 140/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 13/47 kBProgress (5): 145/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 13/47 kBProgress (5): 145/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 14/47 kBProgress (5): 145/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 16/47 kBProgress (5): 149/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 16/47 kBProgress (5): 149/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 17/47 kBProgress (5): 149/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 18/47 kBProgress (5): 153/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 18/47 kBProgress (5): 153/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 20/47 kBProgress (5): 153/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 21/47 kBProgress (5): 157/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 21/47 kBProgress (5): 157/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 22/47 kBProgress (5): 157/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 24/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 24/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 19/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 20/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 21/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 23/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 24/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 25/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 27/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 28/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 30/196 kB | 25/47 kBProgress (5): 162/215 kB | 189/332 kB | 204/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 194/332 kB | 204/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 198/332 kB | 204/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 202/332 kB | 204/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 206/332 kB | 204/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 211/332 kB | 204/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 211/332 kB | 221/235 kB | 31/196 kB | 25/47 kBProgress (5): 162/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kB    Progress (5): 166/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 170/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 174/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 178/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 183/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 187/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 191/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 25/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 26/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 28/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 29/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 30/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 32/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 33/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 35/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 36/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 31/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 32/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 34/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 35/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 36/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 38/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 39/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 41/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 42/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 43/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 45/196 kB | 37/47 kBProgress (5): 195/215 kB | 211/332 kB | 235 kB | 46/196 kB | 37/47 kBProgress (5): 195/215 kB | 215/332 kB | 235 kB | 46/196 kB | 37/47 kBProgress (5): 195/215 kB | 219/332 kB | 235 kB | 46/196 kB | 37/47 kBProgress (5): 195/215 kB | 235/332 kB | 235 kB | 46/196 kB | 37/47 kBProgress (5): 200/215 kB | 235/332 kB | 235 kB | 46/196 kB | 37/47 kBProgress (5): 204/215 kB | 235/332 kB | 235 kB | 46/196 kB | 37/47 kBProgress (5): 204/215 kB | 252/332 kB | 235 kB | 46/196 kB | 37/47 kB                                                                     Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.15.0/plexus-archiver-4.15.0.jar (235 kB at 786 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.8.0/plexus-io-3.8.0.jar
-Progress (4): 208/215 kB | 252/332 kB | 46/196 kB | 37/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 37/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 39/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 40/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 41/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 43/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 44/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 46/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 47/47 kBProgress (4): 212/215 kB | 252/332 kB | 46/196 kB | 47 kB   Progress (4): 212/215 kB | 252/332 kB | 47/196 kB | 47 kBProgress (4): 212/215 kB | 252/332 kB | 49/196 kB | 47 kBProgress (4): 212/215 kB | 252/332 kB | 50/196 kB | 47 kBProgress (4): 212/215 kB | 252/332 kB | 51/196 kB | 47 kBProgress (4): 215 kB | 252/332 kB | 51/196 kB | 47 kB    Progress (4): 215 kB | 252/332 kB | 53/196 kB | 47 kBProgress (4): 215 kB | 252/332 kB | 54/196 kB | 47 kBProgress (4): 215 kB | 252/332 kB | 56/196 kB | 47 kBProgress (4): 215 kB | 257/332 kB | 56/196 kB | 47 kBProgress (4): 215 kB | 273/332 kB | 56/196 kB | 47 kB                                                     Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-model-report/2.25.2/versions-model-report-2.25.2.jar (47 kB at 145 kB/s)
-Progress (3): 215 kB | 273/332 kB | 57/196 kBProgress (3): 215 kB | 273/332 kB | 61/196 kB                                             Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.23.0/commons-codec-1.23.0.jar
-Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/versions/versions-common/2.25.2/versions-common-2.25.2.jar (215 kB at 671 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-16/zstd-jni-1.5.7-16.jar
-Progress (2): 273/332 kB | 65/196 kBProgress (2): 273/332 kB | 70/196 kBProgress (2): 290/332 kB | 70/196 kBProgress (2): 306/332 kB | 70/196 kBProgress (2): 306/332 kB | 74/196 kBProgress (2): 306/332 kB | 78/196 kBProgress (2): 323/332 kB | 78/196 kBProgress (2): 323/332 kB | 82/196 kBProgress (2): 332 kB | 82/196 kB    Progress (2): 332 kB | 86/196 kBProgress (2): 332 kB | 91/196 kB                                Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.7/snakeyaml-2.7.jar (332 kB at 1.0 MB/s)
-Progress (2): 91/196 kB | 7.7/82 kBProgress (2): 91/196 kB | 7.7/82 kB                                   Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/1.1.1/org.eclipse.sisu.inject-1.1.1.jar
-Progress (2): 95/196 kB | 7.7/82 kBProgress (2): 99/196 kB | 7.7/82 kBProgress (2): 103/196 kB | 7.7/82 kBProgress (2): 108/196 kB | 7.7/82 kBProgress (2): 112/196 kB | 7.7/82 kBProgress (2): 116/196 kB | 7.7/82 kBProgress (2): 116/196 kB | 24/82 kB Progress (2): 116/196 kB | 40/82 kBProgress (2): 120/196 kB | 40/82 kBProgress (2): 120/196 kB | 57/82 kBProgress (2): 120/196 kB | 73/82 kBProgress (2): 125/196 kB | 73/82 kBProgress (2): 129/196 kB | 73/82 kBProgress (2): 133/196 kB | 73/82 kBProgress (2): 137/196 kB | 73/82 kBProgress (3): 137/196 kB | 73/82 kB | 7.7/441 kBProgress (3): 137/196 kB | 73/82 kB | 7.7/441 kBProgress (3): 137/196 kB | 73/82 kB | 24/441 kB Progress (3): 137/196 kB | 73/82 kB | 40/441 kBProgress (3): 137/196 kB | 82 kB | 40/441 kB   Progress (4): 137/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 137/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 137/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 137/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 137/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 141/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 146/196 kB | 82 kB | 40/441 kB | 0/6.5 MBProgress (4): 146/196 kB | 82 kB | 57/441 kB | 0/6.5 MBProgress (4): 150/196 kB | 82 kB | 57/441 kB | 0/6.5 MBProgress (4): 150/196 kB | 82 kB | 73/441 kB | 0/6.5 MBProgress (4): 154/196 kB | 82 kB | 73/441 kB | 0/6.5 MB                                                       Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.8.0/plexus-io-3.8.0.jar (82 kB at 245 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.11.1/asm-9.11.1.jar
-Progress (3): 154/196 kB | 73/441 kB | 0/6.5 MBProgress (3): 154/196 kB | 73/441 kB | 0/6.5 MBProgress (3): 154/196 kB | 73/441 kB | 0/6.5 MBProgress (3): 154/196 kB | 73/441 kB | 0/6.5 MBProgress (3): 154/196 kB | 73/441 kB | 0/6.5 MBProgress (3): 154/196 kB | 90/441 kB | 0/6.5 MBProgress (3): 158/196 kB | 90/441 kB | 0/6.5 MBProgress (3): 163/196 kB | 90/441 kB | 0/6.5 MBProgress (3): 163/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 167/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 106/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 122/441 kB | 0/6.5 MBProgress (3): 171/196 kB | 139/441 kB | 0/6.5 MBProgress (4): 171/196 kB | 139/441 kB | 0/6.5 MB | 7.7/131 kBProgress (4): 171/196 kB | 139/441 kB | 0/6.5 MB | 7.7/131 kBProgress (4): 171/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 171/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 175/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 180/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 184/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 184/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 188/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 192/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 192/196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (4): 196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kB    Progress (4): 196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kBProgress (5): 196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kB | 3.2/307 kBProgress (5): 196 kB | 139/441 kB | 0.1/6.5 MB | 7.7/131 kB | 11/307 kB Progress (5): 196 kB | 155/441 kB | 0.1/6.5 MB | 7.7/131 kB | 11/307 kBProgress (5): 196 kB | 172/441 kB | 0.1/6.5 MB | 7.7/131 kB | 11/307 kBProgress (5): 196 kB | 172/441 kB | 0.1/6.5 MB | 24/131 kB | 11/307 kB Progress (5): 196 kB | 172/441 kB | 0.1/6.5 MB | 40/131 kB | 11/307 kBProgress (5): 196 kB | 172/441 kB | 0.1/6.5 MB | 57/131 kB | 11/307 kBProgress (5): 196 kB | 172/441 kB | 0.1/6.5 MB | 57/131 kB | 11/307 kBProgress (5): 196 kB | 172/441 kB | 0.1/6.5 MB | 57/131 kB | 11/307 kB                                                                      Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/woodstox/stax2-api/4.3.2/stax2-api-4.3.2.jar (196 kB at 543 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/2.2.0/doxia-core-2.2.0.jar
-Progress (4): 172/441 kB | 0.1/6.5 MB | 57/131 kB | 11/307 kBProgress (4): 172/441 kB | 0.1/6.5 MB | 57/131 kB | 11/307 kBProgress (4): 172/441 kB | 0.1/6.5 MB | 57/131 kB | 11/307 kBProgress (4): 172/441 kB | 0.1/6.5 MB | 57/131 kB | 28/307 kBProgress (4): 172/441 kB | 0.1/6.5 MB | 57/131 kB | 44/307 kBProgress (4): 188/441 kB | 0.1/6.5 MB | 57/131 kB | 44/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 57/131 kB | 44/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 73/131 kB | 44/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 44/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 44/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 44/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 61/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 77/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 204/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 213/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 229/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 90/131 kB | 93/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 90/131 kB | 110/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 90/131 kB | 126/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kBProgress (4): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kBProgress (5): 246/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kB | 3.8/183 kBProgress (5): 262/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kB | 3.8/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 106/131 kB | 126/307 kB | 3.8/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 122/131 kB | 126/307 kB | 3.8/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 126/307 kB | 3.8/183 kB    Progress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 142/307 kB | 3.8/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 3.8/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 8.0/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 12/183 kB Progress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 16/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 21/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.1/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 279/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 295/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 311/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kBProgress (5): 328/441 kB | 0.2/6.5 MB | 131 kB | 159/307 kB | 25/183 kB                                                                       Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.11.1/asm-9.11.1.jar (131 kB at 336 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/2.2.0/doxia-sink-api-2.2.0.jar
-Progress (4): 328/441 kB | 0.2/6.5 MB | 175/307 kB | 25/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 175/307 kB | 41/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 175/307 kB | 49/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 328/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 344/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 360/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 192/307 kB | 49/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 192/307 kB | 66/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 192/307 kB | 82/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 208/307 kB | 82/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 224/307 kB | 82/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 224/307 kB | 82/183 kBProgress (4): 377/441 kB | 0.2/6.5 MB | 224/307 kB | 82/183 kBProgress (4): 393/441 kB | 0.2/6.5 MB | 224/307 kB | 82/183 kBProgress (4): 393/441 kB | 0.2/6.5 MB | 224/307 kB | 98/183 kBProgress (4): 393/441 kB | 0.2/6.5 MB | 241/307 kB | 98/183 kBProgress (4): 393/441 kB | 0.2/6.5 MB | 257/307 kB | 98/183 kBProgress (4): 393/441 kB | 0.2/6.5 MB | 257/307 kB | 98/183 kBProgress (4): 410/441 kB | 0.2/6.5 MB | 257/307 kB | 98/183 kBProgress (4): 410/441 kB | 0.2/6.5 MB | 257/307 kB | 115/183 kBProgress (4): 410/441 kB | 0.3/6.5 MB | 257/307 kB | 115/183 kBProgress (4): 410/441 kB | 0.3/6.5 MB | 257/307 kB | 115/183 kBProgress (4): 410/441 kB | 0.3/6.5 MB | 257/307 kB | 131/183 kBProgress (5): 410/441 kB | 0.3/6.5 MB | 257/307 kB | 131/183 kB | 7.7/17 kBProgress (5): 410/441 kB | 0.3/6.5 MB | 257/307 kB | 131/183 kB | 16/17 kB Progress (5): 410/441 kB | 0.3/6.5 MB | 257/307 kB | 131/183 kB | 17 kB   Progress (5): 426/441 kB | 0.3/6.5 MB | 257/307 kB | 131/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 257/307 kB | 131/183 kB | 17 kB    Progress (5): 441 kB | 0.3/6.5 MB | 273/307 kB | 131/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 290/307 kB | 131/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 290/307 kB | 147/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 290/307 kB | 164/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 290/307 kB | 180/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 306/307 kB | 180/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 307 kB | 180/183 kB | 17 kB    Progress (5): 441 kB | 0.3/6.5 MB | 307 kB | 180/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 307 kB | 180/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 307 kB | 180/183 kB | 17 kBProgress (5): 441 kB | 0.3/6.5 MB | 307 kB | 183 kB | 17 kB                                                               Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/1.1.1/org.eclipse.sisu.inject-1.1.1.jar (307 kB at 741 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.23.0/commons-codec-1.23.0.jar (441 kB at 1.1 MB/s)
-Progress (3): 0.3/6.5 MB | 183 kB | 17 kB                                         Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/2.2.0/doxia-sink-api-2.2.0.jar (17 kB at 42 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/2.2.0/doxia-core-2.2.0.jar (183 kB at 441 kB/s)
-Progress (1): 0.3/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.5/6.5 MBProgress (1): 0.5/6.5 MBProgress (1): 0.5/6.5 MBProgress (1): 0.5/6.5 MBProgress (1): 0.5/6.5 MBProgress (1): 0.5/6.5 MBProgress (1): 0.6/6.5 MBProgress (1): 0.6/6.5 MBProgress (1): 0.6/6.5 MBProgress (1): 0.6/6.5 MBProgress (1): 0.6/6.5 MBProgress (1): 0.6/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.7/6.5 MBProgress (1): 0.8/6.5 MBProgress (1): 0.8/6.5 MBProgress (1): 0.8/6.5 MBProgress (1): 0.8/6.5 MBProgress (1): 0.8/6.5 MBProgress (1): 0.8/6.5 MBProgress (1): 0.9/6.5 MBProgress (1): 0.9/6.5 MBProgress (1): 0.9/6.5 MBProgress (1): 0.9/6.5 MBProgress (1): 0.9/6.5 MBProgress (1): 0.9/6.5 MBProgress (1): 1.0/6.5 MBProgress (1): 1.0/6.5 MBProgress (1): 1.0/6.5 MBProgress (1): 1.0/6.5 MBProgress (1): 1.0/6.5 MBProgress (1): 1.0/6.5 MBProgress (1): 1.1/6.5 MBProgress (1): 1.1/6.5 MBProgress (1): 1.1/6.5 MBProgress (1): 1.1/6.5 MBProgress (1): 1.1/6.5 MBProgress (1): 1.1/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.2/6.5 MBProgress (1): 1.3/6.5 MBProgress (1): 1.3/6.5 MBProgress (1): 1.3/6.5 MBProgress (1): 1.3/6.5 MBProgress (1): 1.3/6.5 MBProgress (1): 1.3/6.5 MBProgress (1): 1.4/6.5 MBProgress (1): 1.4/6.5 MBProgress (1): 1.4/6.5 MBProgress (1): 1.4/6.5 MBProgress (1): 1.4/6.5 MBProgress (1): 1.4/6.5 MBProgress (1): 1.5/6.5 MBProgress (1): 1.5/6.5 MBProgress (1): 1.5/6.5 MBProgress (1): 1.5/6.5 MBProgress (1): 1.5/6.5 MBProgress (1): 1.5/6.5 MBProgress (1): 1.6/6.5 MBProgress (1): 1.6/6.5 MBProgress (1): 1.6/6.5 MBProgress (1): 1.6/6.5 MBProgress (1): 1.6/6.5 MBProgress (1): 1.6/6.5 MBProgress (1): 1.7/6.5 MBProgress (1): 1.7/6.5 MBProgress (1): 1.7/6.5 MBProgress (1): 1.7/6.5 MBProgress (1): 1.7/6.5 MBProgress (1): 1.7/6.5 MBProgress (1): 1.8/6.5 MBProgress (1): 1.8/6.5 MBProgress (1): 1.8/6.5 MBProgress (1): 1.8/6.5 MBProgress (1): 1.8/6.5 MBProgress (1): 1.8/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 1.9/6.5 MBProgress (1): 2.0/6.5 MBProgress (1): 2.0/6.5 MBProgress (1): 2.0/6.5 MBProgress (1): 2.0/6.5 MBProgress (1): 2.0/6.5 MBProgress (1): 2.0/6.5 MBProgress (1): 2.1/6.5 MBProgress (1): 2.1/6.5 MBProgress (1): 2.1/6.5 MBProgress (1): 2.1/6.5 MBProgress (1): 2.1/6.5 MBProgress (1): 2.1/6.5 MBProgress (1): 2.2/6.5 MBProgress (1): 2.2/6.5 MBProgress (1): 2.2/6.5 MBProgress (1): 2.2/6.5 MBProgress (1): 2.2/6.5 MBProgress (1): 2.2/6.5 MBProgress (1): 2.3/6.5 MBProgress (1): 2.3/6.5 MBProgress (1): 2.3/6.5 MBProgress (1): 2.3/6.5 MBProgress (1): 2.3/6.5 MBProgress (1): 2.3/6.5 MBProgress (1): 2.4/6.5 MBProgress (1): 2.4/6.5 MBProgress (1): 2.4/6.5 MBProgress (1): 2.4/6.5 MBProgress (1): 2.4/6.5 MBProgress (1): 2.4/6.5 MBProgress (1): 2.5/6.5 MBProgress (1): 2.5/6.5 MBProgress (1): 2.5/6.5 MBProgress (1): 2.5/6.5 MBProgress (1): 2.5/6.5 MBProgress (1): 2.5/6.5 MBProgress (1): 2.6/6.5 MBProgress (1): 2.6/6.5 MBProgress (1): 2.6/6.5 MBProgress (1): 2.6/6.5 MBProgress (1): 2.6/6.5 MBProgress (1): 2.6/6.5 MBProgress (1): 2.7/6.5 MBProgress (1): 2.7/6.5 MBProgress (1): 2.7/6.5 MBProgress (1): 2.7/6.5 MBProgress (1): 2.7/6.5 MBProgress (1): 2.7/6.5 MBProgress (1): 2.8/6.5 MBProgress (1): 2.8/6.5 MBProgress (1): 2.8/6.5 MBProgress (1): 2.8/6.5 MBProgress (1): 2.8/6.5 MBProgress (1): 2.8/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 2.9/6.5 MBProgress (1): 3.0/6.5 MBProgress (1): 3.0/6.5 MBProgress (1): 3.0/6.5 MBProgress (1): 3.0/6.5 MBProgress (1): 3.0/6.5 MBProgress (1): 3.0/6.5 MBProgress (1): 3.1/6.5 MBProgress (1): 3.1/6.5 MBProgress (1): 3.1/6.5 MBProgress (1): 3.1/6.5 MBProgress (1): 3.1/6.5 MBProgress (1): 3.1/6.5 MBProgress (1): 3.2/6.5 MBProgress (1): 3.2/6.5 MBProgress (1): 3.2/6.5 MBProgress (1): 3.2/6.5 MBProgress (1): 3.2/6.5 MBProgress (1): 3.2/6.5 MBProgress (1): 3.3/6.5 MBProgress (1): 3.3/6.5 MBProgress (1): 3.3/6.5 MBProgress (1): 3.3/6.5 MBProgress (1): 3.3/6.5 MBProgress (1): 3.3/6.5 MBProgress (1): 3.4/6.5 MBProgress (1): 3.4/6.5 MBProgress (1): 3.4/6.5 MBProgress (1): 3.4/6.5 MBProgress (1): 3.4/6.5 MBProgress (1): 3.4/6.5 MBProgress (1): 3.5/6.5 MBProgress (1): 3.5/6.5 MBProgress (1): 3.5/6.5 MBProgress (1): 3.5/6.5 MBProgress (1): 3.5/6.5 MBProgress (1): 3.5/6.5 MBProgress (1): 3.6/6.5 MBProgress (1): 3.6/6.5 MBProgress (1): 3.6/6.5 MBProgress (1): 3.6/6.5 MBProgress (1): 3.6/6.5 MBProgress (1): 3.6/6.5 MBProgress (1): 3.7/6.5 MBProgress (1): 3.7/6.5 MBProgress (1): 3.7/6.5 MBProgress (1): 3.7/6.5 MBProgress (1): 3.7/6.5 MBProgress (1): 3.7/6.5 MBProgress (1): 3.8/6.5 MBProgress (1): 3.8/6.5 MBProgress (1): 3.8/6.5 MBProgress (1): 3.8/6.5 MBProgress (1): 3.8/6.5 MBProgress (1): 3.8/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 3.9/6.5 MBProgress (1): 4.0/6.5 MBProgress (1): 4.0/6.5 MBProgress (1): 4.0/6.5 MBProgress (1): 4.0/6.5 MBProgress (1): 4.0/6.5 MBProgress (1): 4.0/6.5 MBProgress (1): 4.1/6.5 MBProgress (1): 4.1/6.5 MBProgress (1): 4.1/6.5 MBProgress (1): 4.1/6.5 MBProgress (1): 4.1/6.5 MBProgress (1): 4.1/6.5 MBProgress (1): 4.2/6.5 MBProgress (1): 4.2/6.5 MBProgress (1): 4.2/6.5 MBProgress (1): 4.2/6.5 MBProgress (1): 4.2/6.5 MBProgress (1): 4.2/6.5 MBProgress (1): 4.3/6.5 MBProgress (1): 4.3/6.5 MBProgress (1): 4.3/6.5 MBProgress (1): 4.3/6.5 MBProgress (1): 4.3/6.5 MBProgress (1): 4.3/6.5 MBProgress (1): 4.4/6.5 MBProgress (1): 4.4/6.5 MBProgress (1): 4.4/6.5 MBProgress (1): 4.4/6.5 MBProgress (1): 4.4/6.5 MBProgress (1): 4.4/6.5 MBProgress (1): 4.5/6.5 MBProgress (1): 4.5/6.5 MBProgress (1): 4.5/6.5 MBProgress (1): 4.5/6.5 MBProgress (1): 4.5/6.5 MBProgress (1): 4.5/6.5 MBProgress (1): 4.6/6.5 MBProgress (1): 4.6/6.5 MBProgress (1): 4.6/6.5 MBProgress (1): 4.6/6.5 MBProgress (1): 4.6/6.5 MBProgress (1): 4.6/6.5 MBProgress (1): 4.7/6.5 MBProgress (1): 4.7/6.5 MBProgress (1): 4.7/6.5 MBProgress (1): 4.7/6.5 MBProgress (1): 4.7/6.5 MBProgress (1): 4.7/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.8/6.5 MBProgress (1): 4.9/6.5 MBProgress (1): 4.9/6.5 MBProgress (1): 4.9/6.5 MBProgress (1): 4.9/6.5 MBProgress (1): 4.9/6.5 MBProgress (1): 4.9/6.5 MBProgress (1): 5.0/6.5 MBProgress (1): 5.0/6.5 MBProgress (1): 5.0/6.5 MBProgress (1): 5.0/6.5 MBProgress (1): 5.0/6.5 MBProgress (1): 5.0/6.5 MBProgress (1): 5.1/6.5 MBProgress (1): 5.1/6.5 MBProgress (1): 5.1/6.5 MBProgress (1): 5.1/6.5 MBProgress (1): 5.1/6.5 MBProgress (1): 5.1/6.5 MBProgress (1): 5.2/6.5 MBProgress (1): 5.2/6.5 MBProgress (1): 5.2/6.5 MBProgress (1): 5.2/6.5 MBProgress (1): 5.2/6.5 MBProgress (1): 5.2/6.5 MBProgress (1): 5.3/6.5 MBProgress (1): 5.3/6.5 MBProgress (1): 5.3/6.5 MBProgress (1): 5.3/6.5 MBProgress (1): 5.3/6.5 MBProgress (1): 5.3/6.5 MBProgress (1): 5.4/6.5 MBProgress (1): 5.4/6.5 MBProgress (1): 5.4/6.5 MBProgress (1): 5.4/6.5 MBProgress (1): 5.4/6.5 MBProgress (1): 5.4/6.5 MBProgress (1): 5.5/6.5 MBProgress (1): 5.5/6.5 MBProgress (1): 5.5/6.5 MBProgress (1): 5.5/6.5 MBProgress (1): 5.5/6.5 MBProgress (1): 5.5/6.5 MBProgress (1): 5.6/6.5 MBProgress (1): 5.6/6.5 MBProgress (1): 5.6/6.5 MBProgress (1): 5.6/6.5 MBProgress (1): 5.6/6.5 MBProgress (1): 5.6/6.5 MBProgress (1): 5.7/6.5 MBProgress (1): 5.7/6.5 MBProgress (1): 5.7/6.5 MBProgress (1): 5.7/6.5 MBProgress (1): 5.7/6.5 MBProgress (1): 5.7/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.8/6.5 MBProgress (1): 5.9/6.5 MBProgress (1): 5.9/6.5 MBProgress (1): 5.9/6.5 MBProgress (1): 5.9/6.5 MBProgress (1): 5.9/6.5 MBProgress (1): 5.9/6.5 MBProgress (1): 6.0/6.5 MBProgress (1): 6.0/6.5 MBProgress (1): 6.0/6.5 MBProgress (1): 6.0/6.5 MBProgress (1): 6.0/6.5 MBProgress (1): 6.0/6.5 MBProgress (1): 6.1/6.5 MBProgress (1): 6.1/6.5 MBProgress (1): 6.1/6.5 MBProgress (1): 6.1/6.5 MBProgress (1): 6.1/6.5 MBProgress (1): 6.1/6.5 MBProgress (1): 6.2/6.5 MBProgress (1): 6.2/6.5 MBProgress (1): 6.2/6.5 MBProgress (1): 6.2/6.5 MBProgress (1): 6.2/6.5 MBProgress (1): 6.2/6.5 MBProgress (1): 6.3/6.5 MBProgress (1): 6.3/6.5 MBProgress (1): 6.3/6.5 MBProgress (1): 6.3/6.5 MBProgress (1): 6.3/6.5 MBProgress (1): 6.3/6.5 MBProgress (1): 6.4/6.5 MBProgress (1): 6.4/6.5 MBProgress (1): 6.4/6.5 MBProgress (1): 6.4/6.5 MBProgress (1): 6.4/6.5 MBProgress (1): 6.4/6.5 MBProgress (1): 6.5/6.5 MBProgress (1): 6.5 MB                        Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-16/zstd-jni-1.5.7-16.jar (6.5 MB at 7.0 MB/s)
 [INFO] Searching for local aggregator root...
 [INFO] Local aggregation root: /var/jenkins_home/workspace/line_feat_terraform-provisioning
-[INFO] Processing change of com.example:java-maven-app:1.1.0-SNAPSHOT -> 1.1.1
+[INFO] Processing change of com.example:java-maven-app:1.1.1 -> 1.1.2
 [INFO] Processing com.example:java-maven-app
 [INFO]     Updating project com.example:java-maven-app
-[INFO]         from version 1.1.0-SNAPSHOT to 1.1.1
+[INFO]         from version 1.1.1 to 1.1.2
 [INFO] 
 [INFO] 
 [INFO] ---------------------< com.example:java-maven-app >---------------------
-[INFO] Building java-maven-app 1.1.0-SNAPSHOT
+[INFO] Building java-maven-app 1.1.1
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
@@ -208,8 +120,8 @@ Progress (1): 0.3/6.5 MBProgress (1): 0.4/6.5 MBProgress (1): 0.4/6.5 MBProgr
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  8.755 s
-[INFO] Finished at: 2026-11-15T12:27:27Z
+[INFO] Total time:  3.565 s
+[INFO] Finished at: 2026-11-15T12:51:13Z
 [INFO] ------------------------------------------------------------------------
 [Pipeline] readFile
 [Pipeline] }
@@ -235,7 +147,7 @@ building the application from branch feat/terraform-provisioning
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ---------------------< com.example:java-maven-app >---------------------
-[INFO] Building java-maven-app 1.1.1
+[INFO] Building java-maven-app 1.1.2
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
@@ -257,16 +169,16 @@ building the application from branch feat/terraform-provisioning
 [INFO] No tests to run.
 [INFO] 
 [INFO] --- jar:3.5.0:jar (default-jar) @ java-maven-app ---
-[INFO] Building jar: /var/jenkins_home/workspace/line_feat_terraform-provisioning/target/java-maven-app-1.1.1.jar
+[INFO] Building jar: /var/jenkins_home/workspace/line_feat_terraform-provisioning/target/java-maven-app-1.1.2.jar
 [INFO] 
 [INFO] --- spring-boot:3.5.5:repackage (default) @ java-maven-app ---
-[INFO] Replacing main artifact /var/jenkins_home/workspace/line_feat_terraform-provisioning/target/java-maven-app-1.1.1.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
-[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/line_feat_terraform-provisioning/target/java-maven-app-1.1.1.jar.original
+[INFO] Replacing main artifact /var/jenkins_home/workspace/line_feat_terraform-provisioning/target/java-maven-app-1.1.2.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/line_feat_terraform-provisioning/target/java-maven-app-1.1.2.jar.original
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.720 s
-[INFO] Finished at: 2026-11-15T12:27:37Z
+[INFO] Total time:  3.992 s
+[INFO] Finished at: 2026-11-15T12:51:22Z
 [INFO] ------------------------------------------------------------------------
 [Pipeline] }
 [Pipeline] // script
@@ -313,7 +225,7 @@ building the docker image...
 #3 DONE 0.0s
 
 #2 [internal] load metadata for docker.io/library/amazoncorretto:17-alpine-jdk
-#2 DONE 1.2s
+#2 DONE 0.7s
 
 #4 [internal] load .dockerignore
 #4 transferring context: 2B done
@@ -321,105 +233,79 @@ building the docker image...
 
 #5 [1/3] FROM docker.io/library/amazoncorretto:17-alpine-jdk@sha256:c92e905c7d997a28279c24a2eb347836db0e3ca36a61d5fbd2c9c360b2674a05
 #5 resolve docker.io/library/amazoncorretto:17-alpine-jdk@sha256:c92e905c7d997a28279c24a2eb347836db0e3ca36a61d5fbd2c9c360b2674a05 0.0s done
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 1.05MB / 149.22MB 0.2s
-#5 sha256:881fc932939efef04ca120ad44bbd2c0917851eb247aa4995428afb1e80ede17 0B / 3.85MB 0.2s
-#5 sha256:881fc932939efef04ca120ad44bbd2c0917851eb247aa4995428afb1e80ede17 2.10MB / 3.85MB 0.3s
-#5 ...
+#5 DONE 0.0s
 
 #6 [internal] load build context
 #6 transferring context: 23.90MB 0.6s done
 #6 DONE 0.6s
 
 #5 [1/3] FROM docker.io/library/amazoncorretto:17-alpine-jdk@sha256:c92e905c7d997a28279c24a2eb347836db0e3ca36a61d5fbd2c9c360b2674a05
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 20.97MB / 149.22MB 0.6s
-#5 sha256:881fc932939efef04ca120ad44bbd2c0917851eb247aa4995428afb1e80ede17 3.85MB / 3.85MB 0.4s done
-#5 extracting sha256:881fc932939efef04ca120ad44bbd2c0917851eb247aa4995428afb1e80ede17
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 30.41MB / 149.22MB 0.8s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 42.99MB / 149.22MB 0.9s
-#5 extracting sha256:881fc932939efef04ca120ad44bbd2c0917851eb247aa4995428afb1e80ede17 0.3s done
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 54.53MB / 149.22MB 1.1s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 69.21MB / 149.22MB 1.2s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 81.79MB / 149.22MB 1.4s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 95.42MB / 149.22MB 1.5s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 108.00MB / 149.22MB 1.7s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 121.63MB / 149.22MB 1.8s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 133.17MB / 149.22MB 2.0s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 145.75MB / 149.22MB 2.1s
-#5 sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 149.22MB / 149.22MB 2.5s done
-#5 extracting sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024
-#5 extracting sha256:bab8ed2e78889c66f105bfdd751dd8febb071910eb781f5cfc46ab14902ef024 3.6s done
-#5 DONE 6.3s
+#5 CACHED
 
 #7 [2/3] COPY ./target/java-maven-app-*.jar /usr/app/
-#7 DONE 0.9s
+#7 DONE 0.6s
 
 #8 [3/3] WORKDIR /usr/app
-#8 DONE 0.1s
+#8 DONE 0.2s
 
 #9 exporting to image
 #9 exporting layers
-#9 exporting layers 2.0s done
-#9 exporting manifest sha256:a5302ba4f7bdc5314ad65792df6466649e02fcf54c9bc2b8f4987b2fdb373c7b 0.0s done
-#9 exporting config sha256:c1c909c58cdc9b45e0b2f7e3e1d67947ae5bdeb6968796d9e2d72342358847b8 0.0s done
-#9 exporting attestation manifest sha256:cdff2913b2dd18a701d49c20bf375be9d040d81d2f5edadcc5e7f2b441fcdb6f 0.0s done
-#9 exporting manifest list sha256:daf4af3b259323a91ecdcc3f61d81862f057517e7cfcc6b6e8909c295fe127dc 0.0s done
-#9 naming to docker.io/uds10/demo-app:jma-1.0
+#9 exporting layers 4.5s done
+#9 exporting manifest sha256:8aaa7a3b052325f325f5d9b0a508adbb70246beed8b7b84e349404b10df3ac23 0.0s done
+#9 exporting config sha256:7c66db14891522f3782b2e0738b830d285411329e4f97e6890b3a2f5fbf27efe 0.0s done
+#9 exporting attestation manifest sha256:e2d645872168bae837001aa8cf4c3751ee889af4b35ea15b2b0239bf0b99a974 0.0s done
+#9 exporting manifest list sha256:16db2298f1c2447bac6cd8e07a7718f0201689e3c5b2da7d949c53f6dad29abc 0.0s done
 #9 naming to docker.io/uds10/demo-app:jma-1.0 done
 #9 unpacking to docker.io/uds10/demo-app:jma-1.0
-#9 unpacking to docker.io/uds10/demo-app:jma-1.0 0.4s done
-#9 DONE 2.6s
+#9 unpacking to docker.io/uds10/demo-app:jma-1.0 0.6s done
+#9 DONE 5.3s
 
  [33m1 warning found (use docker --debug to expand):
 [0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 8)
 [Pipeline] sh
 + docker push uds10/demo-app:jma-1.0
 The push refers to repository [docker.io/uds10/demo-app]
-bb8472fe977c: Waiting
+bab8ed2e7888: Waiting
+a0394b4f2a48: Waiting
+0b10372cb50a: Waiting
 4f4fb700ef54: Waiting
 881fc932939e: Waiting
 bab8ed2e7888: Waiting
-a40a1cc5e4dd: Waiting
-a40a1cc5e4dd: Waiting
-bb8472fe977c: Waiting
+a0394b4f2a48: Waiting
+0b10372cb50a: Waiting
+4f4fb700ef54: Waiting
+881fc932939e: Waiting
+0b10372cb50a: Waiting
 4f4fb700ef54: Waiting
 881fc932939e: Waiting
 bab8ed2e7888: Waiting
+a0394b4f2a48: Waiting
+bab8ed2e7888: Waiting
+a0394b4f2a48: Waiting
+0b10372cb50a: Waiting
+4f4fb700ef54: Waiting
+881fc932939e: Waiting
+0b10372cb50a: Waiting
 4f4fb700ef54: Waiting
 881fc932939e: Waiting
 bab8ed2e7888: Waiting
-a40a1cc5e4dd: Waiting
-bb8472fe977c: Waiting
-bb8472fe977c: Waiting
+a0394b4f2a48: Waiting
 4f4fb700ef54: Waiting
 881fc932939e: Waiting
-bab8ed2e7888: Waiting
-a40a1cc5e4dd: Waiting
-a40a1cc5e4dd: Waiting
-bb8472fe977c: Waiting
+bab8ed2e7888: Layer already exists
+a0394b4f2a48: Waiting
+0b10372cb50a: Waiting
+0b10372cb50a: Waiting
 4f4fb700ef54: Waiting
 881fc932939e: Waiting
-bab8ed2e7888: Waiting
-bb8472fe977c: Waiting
-4f4fb700ef54: Waiting
-881fc932939e: Waiting
-bab8ed2e7888: Waiting
-a40a1cc5e4dd: Waiting
-bb8472fe977c: Waiting
+a0394b4f2a48: Waiting
+0b10372cb50a: Waiting
 4f4fb700ef54: Layer already exists
-881fc932939e: Waiting
-bab8ed2e7888: Waiting
-a40a1cc5e4dd: Waiting
-a40a1cc5e4dd: Waiting
-bb8472fe977c: Waiting
-881fc932939e: Waiting
-bab8ed2e7888: Waiting
-881fc932939e: Waiting
-bab8ed2e7888: Waiting
-bb8472fe977c: Pushed
-881fc932939e: Pushed
-a40a1cc5e4dd: Pushed
-bab8ed2e7888: Pushed
-jma-1.0: digest: sha256:daf4af3b259323a91ecdcc3f61d81862f057517e7cfcc6b6e8909c295fe127dc size: 856
+881fc932939e: Layer already exists
+a0394b4f2a48: Waiting
+0b10372cb50a: Pushed
+a0394b4f2a48: Pushed
+jma-1.0: digest: sha256:16db2298f1c2447bac6cd8e07a7718f0201689e3c5b2da7d949c53f6dad29abc size: 856
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
@@ -448,7 +334,12 @@ Running in /var/jenkins_home/workspace/line_feat_terraform-provisioning/terrafor
 
 [0m[1mInitializing provider plugins...[0m
 - Reusing version 6.70.0 of hashicorp/aws from the dependency lock file
-- Using previously-installed hashicorp/aws v6.70.0
+- Installing hashicorp/aws v6.70.0...
+- Installed hashicorp/aws v6.70.0 (signed by HashiCorp)
+
+Terraform has made some changes to the provider dependency selections recorded
+in the .terraform.lock.hcl file. Review those changes and commit them to your
+version control system if they represent changes you intended to make.
 
 [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
 [0m[32m
@@ -462,7 +353,7 @@ commands will detect it and remind you to do so if necessary.[0m
 [Pipeline] sh
 + terraform apply --auto-approve
 [0m[1mdata.aws_ami.latest-amazon-linux-image: Reading...[0m[0m
-[0m[1mdata.aws_ami.latest-amazon-linux-image: Read complete after 0s [id=ami-02021c18e1ca11070][0m
+[0m[1mdata.aws_ami.latest-amazon-linux-image: Read complete after 1s [id=ami-02021c18e1ca11070][0m
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -725,24 +616,24 @@ Terraform will perform the following actions:
 Changes to Outputs:
   [32m+[0m[0m ec2_public_ip = (known after apply)
 [0m[1maws_vpc.myapp-vpc: Creating...[0m[0m
-[0m[1maws_vpc.myapp-vpc: Creation complete after 1s [id=vpc-075517ed93fce61a2][0m
-[0m[1maws_internet_gateway.myapp-igw: Creating...[0m[0m
+[0m[1maws_vpc.myapp-vpc: Creation complete after 1s [id=vpc-02772b8b6b94c3edc][0m
 [0m[1maws_subnet.myapp-subnet-1: Creating...[0m[0m
+[0m[1maws_internet_gateway.myapp-igw: Creating...[0m[0m
 [0m[1maws_default_security_group.default-sg: Creating...[0m[0m
-[0m[1maws_internet_gateway.myapp-igw: Creation complete after 0s [id=igw-0827cb097e48faecf][0m
+[0m[1maws_internet_gateway.myapp-igw: Creation complete after 0s [id=igw-0fbaf6f602ddd01ee][0m
 [0m[1maws_default_route_table.main-rtb: Creating...[0m[0m
-[0m[1maws_subnet.myapp-subnet-1: Creation complete after 0s [id=subnet-0ad25a3938d853ce8][0m
-[0m[1maws_default_route_table.main-rtb: Creation complete after 1s [id=rtb-05c0ff82b565356a1][0m
-[0m[1maws_default_security_group.default-sg: Creation complete after 2s [id=sg-0fbd4ca82cdff9a49][0m
+[0m[1maws_subnet.myapp-subnet-1: Creation complete after 1s [id=subnet-03dca229f07c26c92][0m
+[0m[1maws_default_route_table.main-rtb: Creation complete after 1s [id=rtb-011463f23c6c06e6e][0m
+[0m[1maws_default_security_group.default-sg: Creation complete after 2s [id=sg-000f1b83e474e70d9][0m
 [0m[1maws_instance.myapp-server: Creating...[0m[0m
 [0m[1maws_instance.myapp-server: Still creating... [00m10s elapsed][0m[0m
-[0m[1maws_instance.myapp-server: Creation complete after 12s [id=i-0a704227a3b9c9966][0m
+[0m[1maws_instance.myapp-server: Creation complete after 12s [id=i-036b58cd0819e0f49][0m
 [0m[1m[32m
 Apply complete! Resources: 6 added, 0 changed, 0 destroyed.[0m
 [0m[1m[32m
 Outputs:
 
-[0mec2_public_ip = "52.28.54.204"
+[0mec2_public_ip = "63.177.245.92"
 [Pipeline] sh
 + terraform output ec2_public_ip
 Did you forget the `def` keyword? WorkflowScript seems to be setting a field named EC2_PUBLIC_IP (to a value of type String) which could lead to memory leaks or other issues.
@@ -776,36 +667,36 @@ Sleeping for 1 min 30 sec
 [Pipeline] echo
 deploying to ec2 instance...
 [Pipeline] echo
-"52.28.54.204"
+"63.177.245.92"
 [Pipeline] sshagent
 [ssh-agent] Using credentials ec2-user
 $ ssh-agent
-SSH_AUTH_SOCK=/tmp/ssh-tfsq8sFo2LBk/agent.63853
-SSH_AGENT_PID=63859
+SSH_AUTH_SOCK=/tmp/ssh-OTcz2llRRZrA/agent.64599
+SSH_AGENT_PID=64605
 Running ssh-add (command line suppressed)
 [ssh-agent] Started.
 [Pipeline] {
 [Pipeline] sh
-+ scp -o StrictHostKeyChecking=no server-cmds.sh ec2-user@52.28.54.204:/home/ec2-user
-Warning: Permanently added '52.28.54.204' (ED25519) to the list of known hosts.
++ scp -o StrictHostKeyChecking=no server-cmds.sh ec2-user@63.177.245.92:/home/ec2-user
+Warning: Permanently added '63.177.245.92' (ED25519) to the list of known hosts.
 [Pipeline] sh
-+ scp -o StrictHostKeyChecking=no docker-compose.yaml ec2-user@52.28.54.204:/home/ec2-user
++ scp -o StrictHostKeyChecking=no docker-compose.yaml ec2-user@63.177.245.92:/home/ec2-user
 [Pipeline] sh
 Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
 		 Affected argument(s) used the following variable(s): [DOCKER_CREDS_PSW]
 		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
-+ ssh -o StrictHostKeyChecking=no ec2-user@52.28.54.204 bash ./server-cmds.sh uds10/demo-app:jma-1.0 uds10 ****
++ ssh -o StrictHostKeyChecking=no ec2-user@63.177.245.92 bash ./server-cmds.sh uds10/demo-app:jma-1.0 uds10 ****
 WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
-time="2026-11-15T12:30:18Z" level=warning msg="/home/ec2-user/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+time="2026-11-15T12:54:25Z" level=warning msg="/home/ec2-user/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
  Image postgres:15 Pulling 
  Image uds10/demo-app:jma-1.0 Pulling 
  881fc932939e Pulling fs layer 0B
  bab8ed2e7888 Pulling fs layer 0B
- a40a1cc5e4dd Pulling fs layer 0B
+ a0394b4f2a48 Pulling fs layer 0B
  4f4fb700ef54 Pulling fs layer 0B
  4f4fb700ef54 Waiting 0B
  37fb86c2a767 Pulling fs layer 0B
@@ -840,199 +731,206 @@ time="2026-11-15T12:30:18Z" level=warning msg="/home/ec2-user/docker-compose.yam
  881fc932939e Verifying Checksum 0B
  881fc932939e Download complete 0B
  881fc932939e Extracting 65.54kB
- bab8ed2e7888 Downloading 539.4kB
- 881fc932939e Extracting 655.4kB
- bab8ed2e7888 Downloading 9.087MB
- 881fc932939e Extracting 1.114MB
- bab8ed2e7888 Downloading 19.77MB
- bab8ed2e7888 Downloading 30.89MB
- 881fc932939e Extracting 1.311MB
- bab8ed2e7888 Downloading 40.54MB
+ bab8ed2e7888 Downloading 532.1kB
+ 881fc932939e Extracting 786.4kB
+ bab8ed2e7888 Downloading 8.018MB
+ bab8ed2e7888 Downloading 18.68MB
+ 881fc932939e Extracting 1.507MB
+ bab8ed2e7888 Downloading 29.89MB
+ 881fc932939e Extracting 1.638MB
+ bab8ed2e7888 Downloading 41.64MB
  4f4fb700ef54 Downloading 32B
  4f4fb700ef54 Verifying Checksum 0B
  4f4fb700ef54 Download complete 0B
- 881fc932939e Extracting 1.769MB
- bab8ed2e7888 Downloading 48.54MB
- a40a1cc5e4dd Downloading 223.8kB
- 881fc932939e Extracting 3.342MB
- bab8ed2e7888 Downloading 58.19MB
- 881fc932939e Extracting 3.854MB
- 881fc932939e Extracting 3.854MB
- a40a1cc5e4dd Downloading 450.1kB
- bab8ed2e7888 Downloading 68.31MB
- 881fc932939e Pull complete 0B
- a40a1cc5e4dd Downloading 897.6kB
- bab8ed2e7888 Downloading 74.73MB
- bab8ed2e7888 Downloading 83.82MB
- a40a1cc5e4dd Downloading 3.383MB
- a40a1cc5e4dd Downloading 8.566MB
- bab8ed2e7888 Downloading 91.85MB
+ 881fc932939e Extracting 1.901MB
+ bab8ed2e7888 Downloading 51.24MB
+ 881fc932939e Extracting 2.621MB
+ bab8ed2e7888 Downloading 62.96MB
+ a0394b4f2a48 Downloading 441.6kB
+ 881fc932939e Extracting 2.884MB
+ bab8ed2e7888 Downloading 74.16MB
+ 881fc932939e Extracting 3.146MB
+ bab8ed2e7888 Downloading 83.76MB
+ a0394b4f2a48 Downloading 1.761MB
+ 881fc932939e Extracting 3.539MB
  37fb86c2a767 Downloading 310.7kB
- a40a1cc5e4dd Downloading 12.43MB
- bab8ed2e7888 Downloading 100.4MB
- a40a1cc5e4dd Downloading 17.64MB
- bab8ed2e7888 Downloading 106.8MB
- 37fb86c2a767 Downloading 622kB
- a40a1cc5e4dd Downloading 20.59MB
- bab8ed2e7888 Downloading 113.7MB
- a40a1cc5e4dd Verifying Checksum 0B
- a40a1cc5e4dd Download complete 0B
- bab8ed2e7888 Downloading 126MB
- 37fb86c2a767 Downloading 933.3kB
- bab8ed2e7888 Downloading 137.2MB
- 37fb86c2a767 Downloading 1.867MB
- bab8ed2e7888 Downloading 145.8MB
+ bab8ed2e7888 Downloading 92.3MB
+ a0394b4f2a48 Downloading 3.973MB
+ 37fb86c2a767 Downloading 3.112MB
+ bab8ed2e7888 Downloading 97.64MB
+ a0394b4f2a48 Downloading 7.917MB
+ 37fb86c2a767 Downloading 6.537MB
+ bab8ed2e7888 Downloading 101.9MB
+ 881fc932939e Extracting 3.854MB
+ a0394b4f2a48 Downloading 11.44MB
+ 37fb86c2a767 Downloading 11.52MB
+ bab8ed2e7888 Downloading 105.1MB
+ a0394b4f2a48 Downloading 15.85MB
+ 881fc932939e Pull complete 0B
+ 37fb86c2a767 Downloading 14.94MB
+ bab8ed2e7888 Downloading 109.9MB
+ a0394b4f2a48 Downloading 19.83MB
+ 37fb86c2a767 Downloading 18.37MB
+ bab8ed2e7888 Downloading 115.7MB
+ a0394b4f2a48 Downloading 25.56MB
+ 37fb86c2a767 Downloading 21.79MB
+ bab8ed2e7888 Downloading 119.5MB
+ a0394b4f2a48 Downloading 30.39MB
+ 37fb86c2a767 Downloading 25.53MB
+ bab8ed2e7888 Downloading 123.2MB
+ 37fb86c2a767 Verifying Checksum 0B
+ 37fb86c2a767 Download complete 0B
+ a0394b4f2a48 Downloading 35.24MB
+ bab8ed2e7888 Downloading 128MB
+ a0394b4f2a48 Downloading 41.84MB
+ a0394b4f2a48 Verifying Checksum 0B
+ a0394b4f2a48 Download complete 0B
+ 37fb86c2a767 Extracting 327.7kB
+ bab8ed2e7888 Downloading 132.8MB
+ bab8ed2e7888 Downloading 143.5MB
+ 37fb86c2a767 Extracting 655.4kB
  bab8ed2e7888 Verifying Checksum 0B
  bab8ed2e7888 Download complete 0B
- 37fb86c2a767 Downloading 5.914MB
- 37fb86c2a767 Downloading 13.7MB
+ 37fb86c2a767 Extracting 1.311MB
  59763ee39452 Downloading 1.168kB
  59763ee39452 Verifying Checksum 0B
  59763ee39452 Download complete 0B
  bab8ed2e7888 Extracting 557.1kB
- 37fb86c2a767 Downloading 23.97MB
- 37fb86c2a767 Verifying Checksum 0B
- 37fb86c2a767 Download complete 0B
- 37fb86c2a767 Extracting 327.7kB
- bab8ed2e7888 Extracting 1.671MB
  4a99efbe90d9 Downloading 64.94kB
- 37fb86c2a767 Extracting 2.294MB
- bab8ed2e7888 Extracting 5.014MB
+ 37fb86c2a767 Extracting 3.277MB
+ bab8ed2e7888 Extracting 3.899MB
+ 4a99efbe90d9 Downloading 4.652MB
  4a99efbe90d9 Verifying Checksum 0B
  4a99efbe90d9 Download complete 0B
+ 37fb86c2a767 Extracting 4.588MB
  7181c6d78ba5 Downloading 15.79kB
- 37fb86c2a767 Extracting 3.277MB
- bab8ed2e7888 Extracting 6.685MB
+ bab8ed2e7888 Extracting 6.128MB
  7181c6d78ba5 Verifying Checksum 0B
  7181c6d78ba5 Download complete 0B
  9a9163ac5674 Downloading 97.71kB
+ bab8ed2e7888 Extracting 8.356MB
+ 37fb86c2a767 Extracting 6.554MB
  9a9163ac5674 Verifying Checksum 0B
  9a9163ac5674 Download complete 0B
- 37fb86c2a767 Extracting 4.588MB
- bab8ed2e7888 Extracting 8.356MB
- 37fb86c2a767 Extracting 6.226MB
+ bab8ed2e7888 Extracting 11.14MB
  323c02e93012 Downloading 15.79kB
- bab8ed2e7888 Extracting 12.26MB
+ 37fb86c2a767 Extracting 8.192MB
  323c02e93012 Verifying Checksum 0B
  323c02e93012 Download complete 0B
  6ae33e8fbe64 Downloading 116B
  6ae33e8fbe64 Verifying Checksum 0B
  6ae33e8fbe64 Download complete 0B
- 37fb86c2a767 Extracting 8.192MB
- bab8ed2e7888 Extracting 16.15MB
+ bab8ed2e7888 Extracting 13.93MB
+ 37fb86c2a767 Extracting 9.83MB
+ 37fb86c2a767 Extracting 11.47MB
+ bab8ed2e7888 Extracting 16.71MB
  4021d3e2ed2f Downloading 3.143kB
  4021d3e2ed2f Verifying Checksum 0B
  4021d3e2ed2f Download complete 0B
- 37fb86c2a767 Extracting 9.83MB
- bab8ed2e7888 Extracting 18.94MB
- 37fb86c2a767 Extracting 11.8MB
- bab8ed2e7888 Extracting 21.17MB
+ e005bdfdcc90 Downloading 539kB
+ bab8ed2e7888 Extracting 20.05MB
+ 37fb86c2a767 Extracting 13.43MB
  1ec497177d09 Downloading 3.502kB
  1ec497177d09 Downloading 9.94kB
  1ec497177d09 Verifying Checksum 0B
  1ec497177d09 Download complete 0B
- e005bdfdcc90 Downloading 540.7kB
- 37fb86c2a767 Extracting 13.43MB
- e005bdfdcc90 Downloading 9.634MB
- 37fb86c2a767 Extracting 13.76MB
- bab8ed2e7888 Extracting 23.4MB
+ e005bdfdcc90 Downloading 6.966MB
+ bab8ed2e7888 Extracting 22.28MB
+ 37fb86c2a767 Extracting 14.42MB
+ e005bdfdcc90 Downloading 16.57MB
+ 37fb86c2a767 Extracting 14.75MB
+ e005bdfdcc90 Downloading 27.28MB
  9c2585f73f02 Downloading 127B
  9c2585f73f02 Verifying Checksum 0B
  9c2585f73f02 Download complete 0B
- e005bdfdcc90 Downloading 17.61MB
- 37fb86c2a767 Extracting 14.42MB
- e005bdfdcc90 Downloading 27.71MB
- bab8ed2e7888 Extracting 25.07MB
- 37fb86c2a767 Extracting 14.75MB
+ bab8ed2e7888 Extracting 23.4MB
+ e005bdfdcc90 Downloading 38.48MB
+ 37fb86c2a767 Extracting 15.07MB
+ bab8ed2e7888 Extracting 23.95MB
+ e005bdfdcc90 Downloading 49.7MB
  45d3a0950b05 Downloading 169B
  45d3a0950b05 Verifying Checksum 0B
  45d3a0950b05 Download complete 0B
- e005bdfdcc90 Downloading 38.36MB
- bab8ed2e7888 Extracting 26.18MB
  37fb86c2a767 Extracting 15.4MB
- e005bdfdcc90 Downloading 46.9MB
+ bab8ed2e7888 Extracting 24.51MB
+ e005bdfdcc90 Downloading 57.73MB
+ 37fb86c2a767 Extracting 16.06MB
+ e005bdfdcc90 Downloading 68.92MB
+ bab8ed2e7888 Extracting 25.62MB
  5cfc1e7e58de Downloading 3.502kB
  5cfc1e7e58de Downloading 6.111kB
  5cfc1e7e58de Verifying Checksum 0B
  5cfc1e7e58de Download complete 0B
+ e005bdfdcc90 Downloading 78.02MB
+ 37fb86c2a767 Extracting 16.71MB
  bab8ed2e7888 Extracting 27.3MB
- e005bdfdcc90 Downloading 54.85MB
- 37fb86c2a767 Extracting 16.06MB
- e005bdfdcc90 Downloading 65.52MB
- bab8ed2e7888 Extracting 27.85MB
- 37fb86c2a767 Extracting 16.38MB
  3a5d307e7b83 Downloading 184B
  3a5d307e7b83 Verifying Checksum 0B
  3a5d307e7b83 Download complete 0B
- e005bdfdcc90 Downloading 74.08MB
- bab8ed2e7888 Extracting 29.52MB
- 37fb86c2a767 Extracting 16.71MB
- e005bdfdcc90 Downloading 84.23MB
- 37fb86c2a767 Extracting 17.37MB
- bab8ed2e7888 Extracting 30.64MB
- e005bdfdcc90 Downloading 92.21MB
- e005bdfdcc90 Downloading 103.9MB
- 37fb86c2a767 Extracting 18.02MB
- bab8ed2e7888 Extracting 32.31MB
- e005bdfdcc90 Downloading 114.1MB
+ e005bdfdcc90 Downloading 84.95MB
+ 37fb86c2a767 Extracting 17.69MB
+ bab8ed2e7888 Extracting 28.97MB
+ e005bdfdcc90 Downloading 91.37MB
  37fb86c2a767 Extracting 18.35MB
+ e005bdfdcc90 Downloading 103.1MB
+ bab8ed2e7888 Extracting 30.08MB
+ 37fb86c2a767 Extracting 18.68MB
+ e005bdfdcc90 Downloading 114.3MB
  e005bdfdcc90 Verifying Checksum 0B
  e005bdfdcc90 Download complete 0B
- bab8ed2e7888 Extracting 33.98MB
+ bab8ed2e7888 Extracting 30.64MB
  37fb86c2a767 Extracting 20.32MB
- bab8ed2e7888 Extracting 38.44MB
+ bab8ed2e7888 Extracting 35.09MB
  37fb86c2a767 Extracting 22.28MB
- bab8ed2e7888 Extracting 41.78MB
+ bab8ed2e7888 Extracting 38.44MB
  37fb86c2a767 Extracting 24.25MB
- bab8ed2e7888 Extracting 45.68MB
+ bab8ed2e7888 Extracting 42.34MB
  37fb86c2a767 Extracting 25.89MB
- 37fb86c2a767 Extracting 26.21MB
+ bab8ed2e7888 Extracting 44.56MB
+ 37fb86c2a767 Extracting 26.54MB
+ bab8ed2e7888 Extracting 47.35MB
+ 37fb86c2a767 Extracting 28.51MB
  bab8ed2e7888 Extracting 48.46MB
- bab8ed2e7888 Extracting 52.92MB
- 37fb86c2a767 Extracting 28.18MB
- 37fb86c2a767 Extracting 28.84MB
- bab8ed2e7888 Extracting 54.59MB
- 37fb86c2a767 Extracting 29.49MB
- bab8ed2e7888 Extracting 56.26MB
+ 37fb86c2a767 Extracting 29.16MB
+ bab8ed2e7888 Extracting 50.69MB
  37fb86c2a767 Extracting 29.86MB
+ bab8ed2e7888 Extracting 51.81MB
  37fb86c2a767 Pull complete 0B
  59763ee39452 Extracting 1.168kB
  59763ee39452 Extracting 1.168kB
- bab8ed2e7888 Extracting 58.49MB
  59763ee39452 Pull complete 0B
  4a99efbe90d9 Extracting 65.54kB
- bab8ed2e7888 Extracting 63.5MB
+ bab8ed2e7888 Extracting 57.93MB
  4a99efbe90d9 Extracting 1.901MB
- bab8ed2e7888 Extracting 66.85MB
- 4a99efbe90d9 Extracting 3.604MB
- bab8ed2e7888 Extracting 70.75MB
- 4a99efbe90d9 Extracting 5.636MB
+ bab8ed2e7888 Extracting 61.83MB
+ 4a99efbe90d9 Extracting 3.473MB
+ bab8ed2e7888 Extracting 65.18MB
+ 4a99efbe90d9 Extracting 5.439MB
+ bab8ed2e7888 Extracting 69.07MB
  4a99efbe90d9 Extracting 6.443MB
  4a99efbe90d9 Pull complete 0B
  7181c6d78ba5 Extracting 32.77kB
- bab8ed2e7888 Extracting 72.97MB
+ bab8ed2e7888 Extracting 71.86MB
  7181c6d78ba5 Extracting 1.257MB
  7181c6d78ba5 Pull complete 0B
  9a9163ac5674 Extracting 98.3kB
+ bab8ed2e7888 Extracting 74.09MB
+ 9a9163ac5674 Extracting 1.868MB
  bab8ed2e7888 Extracting 76.32MB
- 9a9163ac5674 Extracting 786.4kB
- 9a9163ac5674 Extracting 2.949MB
- bab8ed2e7888 Extracting 79.1MB
- 9a9163ac5674 Extracting 4.522MB
- bab8ed2e7888 Extracting 81.89MB
- 9a9163ac5674 Extracting 5.308MB
- bab8ed2e7888 Extracting 83MB
- 9a9163ac5674 Extracting 6.291MB
- bab8ed2e7888 Extracting 84.12MB
- 9a9163ac5674 Extracting 7.668MB
- bab8ed2e7888 Extracting 85.79MB
+ 9a9163ac5674 Extracting 3.441MB
+ 9a9163ac5674 Extracting 4.719MB
+ bab8ed2e7888 Extracting 78.54MB
+ bab8ed2e7888 Extracting 80.77MB
+ 9a9163ac5674 Extracting 5.898MB
+ 9a9163ac5674 Extracting 7.078MB
+ bab8ed2e7888 Extracting 82.44MB
  9a9163ac5674 Extracting 8.204MB
  9a9163ac5674 Pull complete 0B
  323c02e93012 Extracting 32.77kB
- 323c02e93012 Extracting 1.278MB
+ bab8ed2e7888 Extracting 84.12MB
  323c02e93012 Extracting 1.312MB
  323c02e93012 Pull complete 0B
- bab8ed2e7888 Extracting 87.46MB
+ bab8ed2e7888 Extracting 85.79MB
  6ae33e8fbe64 Extracting 116B
  6ae33e8fbe64 Extracting 116B
  6ae33e8fbe64 Pull complete 0B
@@ -1040,109 +938,120 @@ time="2026-11-15T12:30:18Z" level=warning msg="/home/ec2-user/docker-compose.yam
  4021d3e2ed2f Extracting 3.143kB
  4021d3e2ed2f Pull complete 0B
  e005bdfdcc90 Extracting 557.1kB
- bab8ed2e7888 Extracting 89.69MB
- e005bdfdcc90 Extracting 1.671MB
+ bab8ed2e7888 Extracting 88.01MB
+ e005bdfdcc90 Extracting 2.228MB
+ bab8ed2e7888 Extracting 89.13MB
  bab8ed2e7888 Extracting 90.8MB
- e005bdfdcc90 Extracting 3.342MB
+ e005bdfdcc90 Extracting 4.456MB
  bab8ed2e7888 Extracting 92.47MB
- e005bdfdcc90 Extracting 5.571MB
+ e005bdfdcc90 Extracting 6.685MB
+ e005bdfdcc90 Extracting 8.356MB
  bab8ed2e7888 Extracting 94.7MB
- e005bdfdcc90 Extracting 7.242MB
- bab8ed2e7888 Extracting 96.37MB
- e005bdfdcc90 Extracting 8.913MB
- bab8ed2e7888 Extracting 97.48MB
- e005bdfdcc90 Extracting 11.14MB
- e005bdfdcc90 Extracting 13.37MB
- bab8ed2e7888 Extracting 99.16MB
- e005bdfdcc90 Extracting 15.6MB
- bab8ed2e7888 Extracting 100.8MB
- e005bdfdcc90 Extracting 17.27MB
+ e005bdfdcc90 Extracting 10.03MB
+ bab8ed2e7888 Extracting 95.81MB
+ e005bdfdcc90 Extracting 12.26MB
+ bab8ed2e7888 Extracting 96.93MB
+ e005bdfdcc90 Extracting 14.48MB
+ bab8ed2e7888 Extracting 98.6MB
+ e005bdfdcc90 Extracting 16.71MB
+ bab8ed2e7888 Extracting 100.3MB
+ e005bdfdcc90 Extracting 18.94MB
  bab8ed2e7888 Extracting 101.9MB
- e005bdfdcc90 Extracting 19.5MB
- bab8ed2e7888 Extracting 103.6MB
  e005bdfdcc90 Extracting 21.17MB
- bab8ed2e7888 Extracting 105.3MB
+ bab8ed2e7888 Extracting 103.1MB
  e005bdfdcc90 Extracting 22.84MB
- bab8ed2e7888 Extracting 107MB
+ bab8ed2e7888 Extracting 104.7MB
  e005bdfdcc90 Extracting 24.51MB
+ bab8ed2e7888 Extracting 106.4MB
  e005bdfdcc90 Extracting 26.18MB
- bab8ed2e7888 Extracting 108.6MB
+ bab8ed2e7888 Extracting 108.1MB
  e005bdfdcc90 Extracting 27.85MB
- bab8ed2e7888 Extracting 110.3MB
- bab8ed2e7888 Extracting 112MB
- e005bdfdcc90 Extracting 30.08MB
- e005bdfdcc90 Extracting 32.31MB
- bab8ed2e7888 Extracting 114.2MB
- bab8ed2e7888 Extracting 115.9MB
- e005bdfdcc90 Extracting 34.54MB
- bab8ed2e7888 Extracting 117.5MB
+ bab8ed2e7888 Extracting 109.7MB
+ e005bdfdcc90 Extracting 29.52MB
+ bab8ed2e7888 Extracting 111.4MB
+ e005bdfdcc90 Extracting 31.75MB
+ bab8ed2e7888 Extracting 113.1MB
+ e005bdfdcc90 Extracting 33.98MB
+ bab8ed2e7888 Extracting 114.8MB
  e005bdfdcc90 Extracting 36.21MB
- bab8ed2e7888 Extracting 119.2MB
- e005bdfdcc90 Extracting 38.44MB
- bab8ed2e7888 Extracting 121.4MB
- e005bdfdcc90 Extracting 40.67MB
- bab8ed2e7888 Extracting 123.1MB
- e005bdfdcc90 Extracting 42.34MB
- bab8ed2e7888 Extracting 124.8MB
- e005bdfdcc90 Extracting 44.56MB
- e005bdfdcc90 Extracting 46.24MB
- bab8ed2e7888 Extracting 126.5MB
- bab8ed2e7888 Extracting 128.1MB
- e005bdfdcc90 Extracting 48.46MB
- bab8ed2e7888 Extracting 129.8MB
- e005bdfdcc90 Extracting 50.69MB
- bab8ed2e7888 Extracting 131.5MB
- e005bdfdcc90 Extracting 52.36MB
- e005bdfdcc90 Extracting 54.03MB
- bab8ed2e7888 Extracting 133.1MB
- bab8ed2e7888 Extracting 135.4MB
+ bab8ed2e7888 Extracting 116.4MB
+ e005bdfdcc90 Extracting 37.88MB
+ bab8ed2e7888 Extracting 118.1MB
+ e005bdfdcc90 Extracting 39.55MB
+ bab8ed2e7888 Extracting 119.8MB
+ e005bdfdcc90 Extracting 41.22MB
+ bab8ed2e7888 Extracting 122MB
+ e005bdfdcc90 Extracting 42.89MB
+ bab8ed2e7888 Extracting 123.7MB
+ e005bdfdcc90 Extracting 45.12MB
+ bab8ed2e7888 Extracting 125.3MB
+ e005bdfdcc90 Extracting 47.35MB
+ bab8ed2e7888 Extracting 127MB
+ e005bdfdcc90 Extracting 49.02MB
+ bab8ed2e7888 Extracting 128.7MB
+ e005bdfdcc90 Extracting 51.25MB
+ bab8ed2e7888 Extracting 130.4MB
+ e005bdfdcc90 Extracting 52.92MB
+ e005bdfdcc90 Extracting 54.59MB
+ bab8ed2e7888 Extracting 132MB
  e005bdfdcc90 Extracting 55.71MB
+ bab8ed2e7888 Extracting 133.7MB
  e005bdfdcc90 Extracting 56.82MB
- bab8ed2e7888 Extracting 137MB
- bab8ed2e7888 Extracting 138.7MB
+ bab8ed2e7888 Extracting 135.4MB
  e005bdfdcc90 Extracting 58.49MB
- bab8ed2e7888 Extracting 140.4MB
+ bab8ed2e7888 Extracting 137MB
  e005bdfdcc90 Extracting 60.16MB
- bab8ed2e7888 Extracting 142.6MB
+ bab8ed2e7888 Extracting 138.7MB
  e005bdfdcc90 Extracting 61.28MB
- bab8ed2e7888 Extracting 144.8MB
+ bab8ed2e7888 Extracting 140.4MB
  e005bdfdcc90 Extracting 62.95MB
- bab8ed2e7888 Extracting 146.5MB
+ bab8ed2e7888 Extracting 142.6MB
  e005bdfdcc90 Extracting 64.62MB
+ bab8ed2e7888 Extracting 144.3MB
+ e005bdfdcc90 Extracting 66.85MB
+ bab8ed2e7888 Extracting 145.9MB
+ e005bdfdcc90 Extracting 69.07MB
  bab8ed2e7888 Extracting 147.6MB
- e005bdfdcc90 Extracting 67.4MB
+ e005bdfdcc90 Extracting 70.75MB
  bab8ed2e7888 Extracting 149.2MB
  bab8ed2e7888 Pull complete 0B
- e005bdfdcc90 Extracting 68.52MB
- a40a1cc5e4dd Extracting 229.4kB
- e005bdfdcc90 Extracting 70.75MB
- a40a1cc5e4dd Extracting 3.67MB
- a40a1cc5e4dd Extracting 7.111MB
- e005bdfdcc90 Extracting 73.53MB
- a40a1cc5e4dd Extracting 11.01MB
+ e005bdfdcc90 Extracting 71.86MB
+ a0394b4f2a48 Extracting 458.8kB
+ e005bdfdcc90 Extracting 74.09MB
+ a0394b4f2a48 Extracting 4.129MB
  e005bdfdcc90 Extracting 75.76MB
- a40a1cc5e4dd Extracting 14.68MB
+ a0394b4f2a48 Extracting 8.258MB
+ a0394b4f2a48 Extracting 11.93MB
  e005bdfdcc90 Extracting 77.99MB
- a40a1cc5e4dd Extracting 18.58MB
  e005bdfdcc90 Extracting 80.22MB
- a40a1cc5e4dd Extracting 21.58MB
- a40a1cc5e4dd Pull complete 0B
+ a0394b4f2a48 Extracting 15.6MB
+ a0394b4f2a48 Extracting 19.27MB
+ e005bdfdcc90 Extracting 82.44MB
+ a0394b4f2a48 Extracting 22.94MB
+ e005bdfdcc90 Extracting 84.67MB
+ a0394b4f2a48 Extracting 26.15MB
+ e005bdfdcc90 Extracting 86.9MB
+ a0394b4f2a48 Extracting 29.82MB
+ a0394b4f2a48 Extracting 33.49MB
+ e005bdfdcc90 Extracting 89.13MB
+ a0394b4f2a48 Extracting 37.62MB
+ e005bdfdcc90 Extracting 91.36MB
+ a0394b4f2a48 Extracting 41.29MB
+ e005bdfdcc90 Extracting 93.59MB
+ a0394b4f2a48 Extracting 43.16MB
+ a0394b4f2a48 Pull complete 0B
  4f4fb700ef54 Extracting 32B
  4f4fb700ef54 Extracting 32B
  4f4fb700ef54 Pull complete 0B
- e005bdfdcc90 Extracting 83MB
+ e005bdfdcc90 Extracting 96.37MB
  Image uds10/demo-app:jma-1.0 Pulled 
- e005bdfdcc90 Extracting 86.34MB
- e005bdfdcc90 Extracting 90.24MB
- e005bdfdcc90 Extracting 94.14MB
- e005bdfdcc90 Extracting 96.93MB
- e005bdfdcc90 Extracting 98.6MB
- e005bdfdcc90 Extracting 101.4MB
- e005bdfdcc90 Extracting 104.2MB
- e005bdfdcc90 Extracting 106.4MB
- e005bdfdcc90 Extracting 108.6MB
- e005bdfdcc90 Extracting 110.9MB
- e005bdfdcc90 Extracting 112.5MB
+ e005bdfdcc90 Extracting 98.04MB
+ e005bdfdcc90 Extracting 100.8MB
+ e005bdfdcc90 Extracting 103.1MB
+ e005bdfdcc90 Extracting 105.8MB
+ e005bdfdcc90 Extracting 108.1MB
+ e005bdfdcc90 Extracting 110.3MB
+ e005bdfdcc90 Extracting 112MB
  e005bdfdcc90 Extracting 113.6MB
  e005bdfdcc90 Extracting 115.3MB
  e005bdfdcc90 Extracting 116.4MB
@@ -1178,7 +1087,7 @@ time="2026-11-15T12:30:18Z" level=warning msg="/home/ec2-user/docker-compose.yam
 $ ssh-agent -k
 unset SSH_AUTH_SOCK;
 unset SSH_AGENT_PID;
-echo Agent pid 63859 killed;
+echo Agent pid 64605 killed;
 [ssh-agent] Stopped.
 [Pipeline] // sshagent
 [Pipeline] }
@@ -1206,16 +1115,17 @@ Masking supported pattern matches of $PASS or $GITHUB_TOKEN
 + git config user.name jenkins
 [Pipeline] sh
 + git status
-HEAD detached at e48d5e0
+HEAD detached at ee26476
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   pom.xml
+	modified:   terraform/.terraform.lock.hcl
 
 no changes added to commit (use "git add" and/or "git commit -a")
 [Pipeline] sh
 + git branch
-* (HEAD detached at e48d5e0)
+* (HEAD detached at ee26476)
 [Pipeline] sh
 + git config --list
 filter.lfs.process=git-lfs filter-process
@@ -1240,12 +1150,12 @@ Warning: A secret was passed to "sh" using Groovy String interpolation, which is
 + git add .
 [Pipeline] sh
 + git commit -m ci: version bump
-[detached HEAD 0cf532a] ci: version bump
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[detached HEAD 41bfa95] ci: version bump
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 [Pipeline] sh
 + git push origin HEAD:feat/terraform-provisioning
 To https://github.com/ujwalshende/aws-java-maven-app.git
-   e48d5e0..0cf532a  HEAD -> feat/terraform-provisioning
+   ee26476..41bfa95  HEAD -> feat/terraform-provisioning
 [Pipeline] }
 [Pipeline] // withCredentials
 [Pipeline] }
